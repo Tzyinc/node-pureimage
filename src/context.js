@@ -558,10 +558,10 @@ class Context {
         if(typeof dx === 'undefined') return this.drawImage(bitmap, 0, 0, bitmap.width, bitmap.height, sx, sy, sw, sh)
         for(var i=0; i<dw; i++) {
             var tx = i/dw;
-            var ssx = Math.floor(tx*sw)+sx;
+            var ssx = Math.round(tx*sw)+sx;
             for(var j=0; j<dh; j++) {
                 var ty = j/dh;
-                var ssy = sy+Math.floor(ty * sh);
+                var ssy = sy+Math.round(ty * sh);
                 var rgba = bitmap.getPixelRGBA(ssx,ssy);
                 this.bitmap.setPixelRGBA(dx+i, dy+j, rgba);
             }
